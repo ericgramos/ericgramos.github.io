@@ -1,7 +1,7 @@
 /* Modern minimal academic website styling */
 :root {
     --primary-color: #2c2c2c;
-    --background-color: #D6D2CD;
+    --background-color: #E8EBEF;
     --accent-color: #9D1535;
     --accent-light: #4d94ff;
     --text-color: #333333;
@@ -79,7 +79,7 @@ a:hover {
 .nav-menu {
     margin: 0 0 3rem 0;
     padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #757575;
 }
 
 .nav-menu a {
