@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Mathematics Workshop 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="sidebar">
+        <a href="index.html" class="active">Home</a>
+        <a href="participants.html">Participants</a>
+        <a href="program.html">Program</a>
+        <a href="local.html">Local Information</a>
+        <a href="contact.html">Contact us</a>
+    </div>
+
+    <div class="main-content">
+        <div class="banner-container">
+            <img src="banner.jpg" alt="Conference Banner" class="banner">
+            <div class="banner-title">AI in Mathematics and Mathematics Education Day</div>
+        </div>
+        
+        <h3>General Description</h3>
+        <p>This single day workshop will be held on <strong>June 13th, 2025</strong> at the Stevens Institute of Technology. The purpose of this workshop is to explore the now numerous applications of AI-methods to a variety of mathematical disciplines, as well as to mathematics education.</p>
+        
+        <p>This workshop will act as the final day of GAGTA 2025 in the GAGTA (Geometric and Asymptotic Group Theory with Applications) series of conferences.</p>
+
+        <h3>Sponsors</h3>
+        <p>This conference is generously supported by the Department of Mathematical Sciences at the Stevens Institute of Technology.</p>
+        <img src="Stevens_logo.png" alt="Stevens Logo" style="max-width: 200px;">
+
+        <h3>Speakers</h3>
+        <ul class="speaker-list">
+            <li>Akshay Venkatesh (Institute for Advanced Study)</li>
+            <li>Sergei Gukov (CalTech)</li>
+            <li>Lena Bunina (Bar-Ilan)</li>
+            <li>Alexei Miasnikov (Stevens)</li>
+            <li>Vlad Stepanov (Gradarius) "AI in Math Education"</li>
+            <li>Yulia Beloshapka (Google)</li>
+        </ul>
+
+        <h3>Organizing Committee</h3>
+        <ul class="committee-list">
+            <li>Jan Cannizzo (Stevens Institute of Technology)</li>
+            <li>Montse Casals-Ruiz (University of the Basque Country)</li>
+            <li>Bob Gilman (Stevens Institute of Technology)</li>
+            <li>Olga Kharlampovich (Hunter College of CUNY)</li>
+            <li>Alexei Miasnikov (Stevens Institute of Technology)</li>
+            <li>Andrey Nikolaev (Stevens Institute of Technology)</li>
+            <li>Eric Ramos (Stevens Institute of Technology)</li>
+            <li>Mahmood Sohrabi (Stevens Institute of Technology)</li>
+            <li>Sasha Ushakov (Stevens Institute of Technology)</li>
+            <li>Alex Taam (Stevens Institute of Technology)</li>
+            <li>Alina Vdovina (City College of CUNY)</li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+
+            menuToggle.addEventListener('click', function() {
+                menuToggle.classList.toggle('active');
+                sidebar.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnMenuToggle = menuToggle.contains(event.target);
+
+                if (!isClickInsideSidebar && !isClickOnMenuToggle && sidebar.classList.contains('active')) {
+                    menuToggle.classList.remove('active');
+                    sidebar.classList.remove('active');
+                }
+            });
+
+            // Close menu when window is resized above mobile breakpoint
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    menuToggle.classList.remove('active');
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
