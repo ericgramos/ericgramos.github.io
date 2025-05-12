@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - AI in Mathematics Workshop 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="participants.html">Participants</a>
+        <a href="program.html">Program</a>
+        <a href="local.html">Local Information</a>
+        <a href="registration.html" class="active">Registration</a>
+        <a href="contact.html">Contact us</a>
+    </div>
+
+    <div class="main-content">
+        <div class="banner-container">
+            <img src="banner.jpg" alt="Conference Banner" class="banner">
+            <div class="banner-title">AI and Mathematics: Current Trends and Future Directions</div>
+        </div>
+        
+        <h3>Registration</h3>
+        <div class="registration-form">
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="affiliation">Affiliation:</label>
+                    <input type="text" id="affiliation" name="affiliation" required>
+                </div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+
+            menuToggle.addEventListener('click', function() {
+                menuToggle.classList.toggle('active');
+                sidebar.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnMenuToggle = menuToggle.contains(event.target);
+
+                if (!isClickInsideSidebar && !isClickOnMenuToggle && sidebar.classList.contains('active')) {
+                    menuToggle.classList.remove('active');
+                    sidebar.classList.remove('active');
+                }
+            });
+
+            // Close menu when window is resized above mobile breakpoint
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    menuToggle.classList.remove('active');
+                    sidebar.classList.remove('active');
+                }
+            });
+
+            // Handle form submission
+            const form = document.getElementById('registrationForm');
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = {
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    affiliation: document.getElementById('affiliation').value
+                };
+
+                try {
+                    const response = await fetch('/submit-registration', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (response.ok) {
+                        alert('Thank you for registering!');
+                        window.location.reload();
+                    } else {
+                        alert('Registration failed. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,12 @@
+{
+  "name": "ai-mathematics-workshop",
+  "version": "1.0.0",
+  "description": "AI in Mathematics Workshop 2025 Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+} 
