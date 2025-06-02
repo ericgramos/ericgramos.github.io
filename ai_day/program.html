@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Program - AI in Mathematics Workshop 2025</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .expandable-row {
+            cursor: pointer;
+        }
+        
+        .arrow-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .arrow-icon.expanded {
+            transform: rotate(180deg);
+        }
+        
+        .expanded-content {
+            display: none;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-top: 1px solid #ddd;
+        }
+        
+        .expanded-content.active {
+            display: table-cell;
+        }
+        
+        .expanded-row {
+            background-color: #f5f5f5;
+        }
+        
+        .expanded-row td {
+            border-bottom: none;
+        }
+    </style>
 </head>
 <body>
     <button class="menu-toggle" aria-label="Toggle navigation menu">
@@ -37,7 +72,7 @@
                     <th>Time</th>
                     <th>Speaker</th>
                     <th>Title</th>
-                    <th>Slides</th>
+                    <th>Abstract</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,29 +82,61 @@
                     <td>Coffee</td>
                     <td>-</td>
                 </tr>
-                <tr>
+                <tr class="expandable-row">
                     <td>9:00-9:45</td>
                     <td>I. Beloshapka</td>
                     <td>TBA</td>
-                    <td><a href="#">[Slides]</a></td>
+                    <td><span class="arrow-icon">▼</span></td>
                 </tr>
-                <tr>
+                <tr class="expanded-content">
+                    <td colspan="4">
+                        <div class="expanded-text">
+                            <h4>Abstract</h4>
+                            <p>Abstract will be available soon.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="expandable-row">
                     <td>9:55-10:40</td>
                     <td>H. Kera</td>
                     <td>TBA</td>
-                    <td><a href="#">[Slides]</a></td>
+                    <td><span class="arrow-icon">▼</span></td>
                 </tr>
-                <tr>
+                <tr class="expanded-content">
+                    <td colspan="4">
+                        <div class="expanded-text">
+                            <h4>Abstract</h4>
+                            <p>Abstract will be available soon.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="expandable-row">
                     <td>10:50-11:35</td>
                     <td>S. Gukov</td>
-                    <td>TBA</td>
-                    <td><a href="#">[Slides]</a></td>
+                    <td>Math + AI = AGI</td>
+                    <td><span class="arrow-icon">▼</span></td>
                 </tr>
-                <tr>
+                <tr class="expanded-content">
+                    <td colspan="4">
+                        <div class="expanded-text">
+                            <h4>Abstract</h4>
+                            <p>It comes as no surprise that solving challenging research-level math problems drives progress in mathematics. What is more surprising, though, is that solving such long-standing open problems also contributes to an entirely different field: the development of the next generation AI systems. We live in an exciting time where mathematics and AI can greatly benefit each other, and the goal of the talk is to explain how and why, drawing on specific examples from knot theory and combinatorial group theory. Largely based on recent work with Ali Shehper, Anibal Medina-Mardones, Lucas Fagan, Bart?omiej Lewandowski, Angus Gruen, Yang Qiu, Piotr Kucharski, and Zhenghan Wang.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="expandable-row">
                     <td>11:45-12:30</td>
                     <td>A. Venkatesh</td>
                     <td>TBA</td>
-                    <td><a href="#">[Slides]</a></td>
+                    <td><span class="arrow-icon">▼</span></td>
+                </tr>
+                <tr class="expanded-content">
+                    <td colspan="4">
+                        <div class="expanded-text">
+                            <h4>Abstract</h4>
+                            <p>Abstract will be available soon.</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>12:30-13:30</td>
@@ -77,35 +144,90 @@
                     <td>Lunch (Babbio 104)</td>
                     <td>-</td>
                 </tr>
-                <tr>
+                <tr class="expandable-row">
                     <td>13:30-13:55</td>
-                    <td>E. Bunina</td>
-                    <td>TBA</td>
-                    <td><a href="#">[Slides]</a></td>
+                    <td>L. Bunina</td>
+                    <td>Teaching “AI in Mathematics”: Designing and Delivering an Experimental Course for Mathematicians</td>
+                    <td><span class="arrow-icon">▼</span></td>
                 </tr>
-                <tr>
+                <tr class="expanded-content">
+                    <td colspan="4">
+                        <div class="expanded-text">
+                            <h4>Abstract</h4>
+                            <p>This talk presents the experience of designing and teaching an experimental course on “AI in Mathematics” for advanced undergraduate and graduate students at Stevens Institute of Technology and Bar-Ilan University. The course aimed to bridge the gap between modern AI techniques and mathematical problem-solving, focusing on real mathematical content rather than generic AI applications.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="expandable-row">
                     <td>14:00-14:30</td>
                     <td>A. Miasnikov</td>
                     <td>TBA</td>
-                    <td><a href="#">[Slides]</a></td>
+                    <td><span class="arrow-icon">▼</span></td>
                 </tr>
-                <tr>
+                <tr class="expanded-content">
+                    <td colspan="4">
+                        <div class="expanded-text">
+                            <h4>Abstract</h4>
+                            <p>Abstract will be available soon.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="expandable-row">
                     <td>14:40-15:25</td>
-                    <td>V. Stepanov </td>
+                    <td>V. Stepanov</td>
                     <td>TBA</td>
-                    <td><a href="#">[Slides]</a></td>
+                    <td><span class="arrow-icon">▼</span></td>
                 </tr>
-                <tr>
+                <tr class="expanded-content">
+                    <td colspan="4">
+                        <div class="expanded-text">
+                            <h4>Abstract</h4>
+                            <p>Abstract will be available soon.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="expandable-row">
                     <td>15:35-16:20</td>
                     <td>D. Halpern-Leistner</td>
                     <td>TBA</td>
-                    <td><a href="#">[Slides]</a></td>
+                    <td><span class="arrow-icon">▼</span></td>
                 </tr>
-                <tr>
-                    <td>16:30-17:30</td>
+                <tr class="expanded-content">
+                    <td colspan="4">
+                        <div class="expanded-text">
+                            <h4>Abstract</h4>
+                            <p>Abstract will be available soon.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="expandable-row">
+
+                    <td>16:30-16:55</td>
+                    <td>A. Garreta</td>
+                    <td>TBA</td>
+                    <td><span class="arrow-icon">▼</span></td>
+                </tr>
+                <tr class="expanded-content">
+                    <td colspan="4">
+                        <div class="expanded-text">
+                            <h4>Abstract</h4>
+                            <p>Abstract will be available soon.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="expandable-row">
+                    <td>17:30-17:50</td>
                     <td>Roman Chernin and Speakers</td>
                     <td>Panel Discussion</td>
-                    <td><a href="#">[Slides]</a></td>
+                    <td><span class="arrow-icon">▼</span></td>
+                </tr>
+                <tr class="expanded-content">
+                    <td colspan="4">
+                        <div class="expanded-text">
+                            <h4>Abstract</h4>
+                            <p>Abstract will be available soon.</p>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>18:00</td>
@@ -145,6 +267,24 @@
                     menuToggle.classList.remove('active');
                     sidebar.classList.remove('active');
                 }
+            });
+
+            // Handle expandable rows
+            const expandableRows = document.querySelectorAll('.expandable-row');
+            expandableRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    const arrow = this.querySelector('.arrow-icon');
+                    const expandedContent = this.nextElementSibling;
+                    
+                    // Toggle arrow rotation
+                    arrow.classList.toggle('expanded');
+                    
+                    // Toggle expanded content
+                    expandedContent.classList.toggle('active');
+                    
+                    // Toggle row background
+                    this.classList.toggle('expanded-row');
+                });
             });
         });
     </script>
