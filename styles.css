@@ -63,11 +63,11 @@ a:hover {
 }
 
 .profile-image {
-    width: 180px;
-    height: 180px;
+    width: 260px;
+    height: 260px;
     object-fit: cover;
     border-radius: 4px;
-    margin-top: 6rem;
+    margin-top: 3.5rem;
 }
 
 .pronouns {
